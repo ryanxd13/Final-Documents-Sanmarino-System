@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barangay San Marino Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="logo.png" alt="Logo" class="sidebar-logo">
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-item active" onclick="showSection('dashboard')">
+                    <i class="fas fa-th-large"></i> DASHBOARD
+                </button>
+                <button class="nav-item" onclick="showSection('announcements')">
+                    <i class="fas fa-bullhorn"></i> ANNOUNCEMENTS
+                </button>
+                <button class="nav-item" onclick="showSection('complaints')">
+                    <i class="fas fa-exclamation-circle"></i> COMPLAINTS
+                </button>
+                <button class="nav-item" onclick="showSection('residents')">
+                    <i class="fas fa-users"></i> RESIDENT LIST
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> LOGOUT</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="dashboardSearch" placeholder="Search residents...">
+                </div>
+                <div class="header-icons">
+                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-th"></i>
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </header>
+
+            <section id="dashboard" class="content-section active">
+                <h1 class="page-title">DASHBOARD</h1>
+                <p class="welcome-text">Hello, Staff!</p>
+
+                <div class="dashboard-grid">
+                    <div class="data-card table-card">
+                        <h3>Recent Resident Inquiries</h3>
+                        <table id="recentResidentsTable">
+                            <thead>
+                                <tr>
+                                    <th>Full Name</th>
+                                    <th>Category</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td colspan="3" style="text-align:center;">Loading data...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="stats-col">
+                        <div class="stat-box gold">
+                            <p>Total Population</p>
+                            <span class="main-num" id="totalPop">0</span>
+                            <div class="split-num">
+                                <span class="male" id="maleCount">0</span> | <span class="female" id="femaleCount">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-box gold">
+                            <p>Amount of Complaints For this Month</p>
+                            <span class="main-num">0</span>
+                        </div>
+                        <div class="stat-box gold chart-container">
+                            <p>Registered Voters</p>
+                            <div class="mock-chart">
+                                <div class="bar-pair" style="height: 40%;"><span>Jan</span></div>
+                                <div class="bar-pair" style="height: 60%;"><span>Feb</span></div>
+                                <div class="bar-pair" style="height: 30%;"><span>Mar</span></div>
+                                <div class="bar-pair" style="height: 80%;"><span>Apr</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+       <section id="announcements" class="content-section">
+    <h1 class="page-title">ANNOUNCEMENTS</h1>
+    
+    <div class="data-card announcement-form-card">
+        <h3><i class="fas fa-edit"></i> Manage Announcement</h3>
+        <form id="announcementForm">
+            <input type="hidden" id="announcementId">
+            <div class="form-row">
+                <input type="text" id="annTitle" placeholder="TITLE (e.g., PUBLIC NOTICE)" required>
+                <input type="text" id="annSubject" placeholder="SUBJECT (e.g., Water Interruption)" required>
+            </div>
+            <textarea id="annContent" rows="3" placeholder="Announcement details..." required></textarea>
+            <div class="form-footer">
+                <button type="submit" id="annSubmitBtn" class="post-btn">Post Announcement</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="announcementsList" class="announcement-container">
+        </div>
+</section>
+
+         <section id="complaints" class="content-section">
+    <h1 class="page-title">COMPLAINTS MANAGEMENT</h1>
+    
+    <div class="data-card">
+        <table class="complaints-table">
+            <thead>
+                <tr>
+                    <th>COMPLAINT #</th>
+                    <th>TYPE</th>
+                    <th>LOCATION</th>
+                    <th>DATE FILED</th>
+                    <th>FILED BY</th>
+                    <th>DESCRIPTION</th>
+                    <th>STATUS</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody id="complaintsTableBody">
+                </tbody>
+        </table>
+    </div>
+    
+    <div class="analytics-row">
+        <div class="stat-box">TOTAL COMPLAINTS: <h1 id="totalComplaintsCount">0</h1></div>
+        <div class="stat-box">ONGOING: <h1 id="ongoingCount">0</h1></div>
+    </div>
+</section>
+
+            <section id="residents" class="content-section">
+    <h1 class="page-title">RESIDENT LIST</h1>
+    <div class="data-card">
+        <table id="masterResidentsTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Sex</th>
+                    <th>Age</th>
+                    <th>Date Added</th>
+                    <th>Actions</th> </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </div>
+</section>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

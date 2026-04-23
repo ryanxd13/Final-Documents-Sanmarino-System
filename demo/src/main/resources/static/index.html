@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barangay San Marino - E-Governance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+    
+    <div class="doc-dropdown">
+        <button class="doc-request-btn">E-BARANGAY SERVICES <i class="fas fa-chevron-down"></i></button>
+        <div class="dropdown-content">
+            <a href="#" onclick="openRequestModal('Document Request')">Request Document</a>
+            <a href="#" onclick="openRequestModal('Complaint')">File a Complaint</a>
+        </div>
+    </div>
+</header>
+
+    <nav class="main-nav">
+        <div class="logo-container">
+            <img src="logo.png" alt="Barangay Logo" class="logo-img">
+            <div class="logo-text">
+                <h1>BARANGAY SAN MARINO</h1>
+                <p>PROVINCE OF RIZAL</p>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">HOME</a></li>
+            <li><a href="#">ABOUT <i class="fas fa-chevron-down"></i></a></li>
+            <li><a href="#">OFFICES <i class="fas fa-chevron-down"></i></a></li>
+            <li><a href="#">NEWS</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-overlay">
+            <img src="seal1.png" alt="Barangay Seal" class="hero-seal">
+            <img src="seal2.png" alt="Rizal Seal" class="hero-seal">
+        </div>
+    </section>
+
+    <main class="systems-section">
+    <h2>E-GOVERNANCE SYSTEMS</h2>
+    <div class="systems-grid">
+        <div class="system-card" onclick="handleSystemClick('Barangay Profile')">
+            <div class="icon-circle"><i class="fas fa-user"></i></div>
+            <p>Barangay Profile System</p>
+        </div>
+
+        <div class="system-card hover-card">
+            <div class="card-content">
+                <div class="icon-circle"><i class="fas fa-file-alt"></i></div>
+                <p>Documents Request and Creation</p>
+            </div>
+            <div class="system-options">
+                <button onclick="openRequestModal('Inquiry')">Inquiry</button>
+                <button onclick="openRequestModal('Request')">Request</button>
+            </div>
+        </div>
+
+        <div class="system-card hover-card">
+            <div class="card-content">
+                <div class="icon-circle"><i class="fas fa-users-cog"></i></div>
+                <p>Complaint Tracking</p>
+            </div>
+            <div class="system-options">
+                <button onclick="openRequestModal('Report')">Report</button>
+                <button onclick="openRequestModal('Track')">Track Status</button>
+            </div>
+        </div>
+
+        <div class="system-card" onclick="handleSystemClick('Announcements')">
+            <div class="icon-circle"><i class="fas fa-bullhorn"></i></div>
+            <p>Weekly Announcement Posting</p>
+        </div>
+    </div>
+</main>
+
+    <div id="residentModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="modal-header">
+            <img src="logo.png" alt="Seal" class="form-logo">
+        </div>
+        
+        <form class="resident-form">
+            <div class="form-row">
+                <div class="form-group main-col">
+                    <label>LAST NAME</label>
+                    <input type="text" placeholder="E.G., CRUZ">
+                    
+                    <label>FIRST NAME</label>
+                    <input type="text" placeholder="E.G., JOHN MICHAEL">
+
+                    <label>MIDDLE NAME (If applicable)</label>
+                    <input type="text" placeholder="E.G., ALFONSO">
+
+                    <div class="inline-group">
+                        <div class="field">
+                            <label>SEX</label>
+                            <select>
+                                <option>MALE</option>
+                                <option>FEMALE</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>CIVIL STATUS</label>
+                            <select>
+                                <option>SINGLE</option>
+                                <option>MARRIED</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <label>HOME ADDRESS</label>
+                    <input type="text" class="full-width">
+                    
+                    <label>ZIP CODE</label>
+                    <input type="text" style="width: 120px;">
+                </div>
+
+                <div class="form-group side-col">
+                    <div class="inline-group">
+                        <div class="field">
+                            <label>AGE</label>
+                            <input type="number">
+                        </div>
+                        <div class="field">
+                            <label>DATE OF BIRTH</label>
+                            <input type="date">
+                        </div>
+                    </div>
+
+                    <label>PLACE OF BIRTH (CITY/MUNICIPALITY)</label>
+                    <input type="text">
+
+                    <div class="inline-group">
+                        <div class="field">
+                            <label>CITIZENSHIP</label>
+                            <input type="text">
+                        </div>
+                        <div class="field">
+                            <label>RELIGION</label>
+                            <input type="text">
+                        </div>
+                    </div>
+
+                    <label>RESIDENT SINCE</label>
+                    <input type="date">
+                </div>
+            </div>
+            
+            <div class="form-footer">
+                <p>Have an account already? <a href="#">Click Here</a></p>
+                <button type="submit" class="add-resident-btn">Add Resident</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="complaintModal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 700px;">
+        <span class="close-btn" onclick="closeComplaintModal()">&times;</span>
+        <div class="modal-header">
+            <img src="logo.png" alt="Seal" class="form-logo">
+            <h2 style="color: #FFC107; margin-bottom: 15px;">FILE A NEW COMPLAINT</h2>
+        </div>
+        
+        <form id="complaintForm" class="resident-form">
+            <div class="form-row">
+                <div class="form-group main-col">
+                    <label>SERVICE ID</label>
+                    <input type="text" id="compServiceId" placeholder="E.G., 101" required>
+                    
+                    <label>TYPE OF COMPLAINT</label>
+                    <select id="compType" required>
+                        <option value="">SELECT TYPE</option>
+                        <option value="Noise Complaint">Noise Complaint</option>
+                        <option value="Garbage Issue">Garbage Issue</option>
+                        <option value="Neighbor Dispute">Neighbor Dispute</option>
+                        <option value="Water Issue">Water Issue</option>
+                    </select>
+
+                    <label>LOCATION</label>
+                    <input type="text" id="compLocation" placeholder="E.G., BRGY. HALL AREA" required>
+                </div>
+
+                <div class="form-group side-col">
+                    <label>DATE OCCURRED</label>
+                    <input type="date" id="compDate" required>
+
+                    <label>DESCRIPTION</label>
+                    <textarea id="compDescription" rows="6" placeholder="PROVIDE DETAILS..." 
+                        style="width: 100%; padding: 10px; border-radius: 10px; border: none; background-color: #f0ede4;"></textarea>
+                </div>
+            </div>
+            
+            <div class="form-footer">
+                <p>Data will be sent to the Complaints Management dashboard.</p>
+                <button type="submit" class="add-resident-btn" style="background-color: #FFC107; color: #333;">Submit Complaint</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

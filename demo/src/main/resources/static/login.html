@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Log-In - Barangay San Marino</title>
+    <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+
+    <div class="background-overlay">
+        <div class="login-card">
+            
+            <div class="brand-section">
+                <img src="barangay-logo.png" alt="Barangay Logo" class="login-logo">
+                <h1 class="staff-title">STAFF<br>LOG-IN</h1>
+            </div>
+
+            <div class="form-section">
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="username">Email Address / Mobile Number</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <button type="submit" class="login-btn">Log in</button>
+                    
+                    <p class="register-text">
+                        Click <a href="#">Register</a> if you don't have an account yet
+                    </p>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="login-script.js"></script>
+</body>
+</html>

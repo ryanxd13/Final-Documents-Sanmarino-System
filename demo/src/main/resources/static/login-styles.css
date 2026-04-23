@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+    height: 100%;
+}
+
+/* Background image with blur effect */
+.background-overlay {
+    height: 100%;
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), 
+                url('barangay-hall-bg.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Modal Card */
+.login-card {
+    background-color: #EBEBE4; /* Light grey/off-white background */
+    width: 800px;
+    height: 500px;
+    display: flex;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+    padding: 40px;
+    gap: 40px;
+}
+
+/* Left side */
+.brand-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.login-logo {
+    width: 140px;
+    margin-bottom: 30px;
+}
+
+.staff-title {
+    font-size: 3rem;
+    color: #4A76B2;
+    font-weight: 900;
+    line-height: 1;
+    text-shadow: 2px 2px 0px #fff, 4px 4px 0px rgba(0,0,0,0.1);
+}
+
+/* Right side blue box */
+.form-section {
+    flex: 1.2;
+    background-color: #4A76B2;
+    border-radius: 10px;
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #333;
+    background-color: #F0F0F0;
+    font-size: 1rem;
+}
+
+.login-btn {
+    display: block;
+    width: 40%;
+    margin: 10px auto 30px;
+    padding: 12px;
+    background-color: #FFC107;
+    border: none;
+    border-radius: 10px;
+    color: #4A76B2;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #e5ad06;
+}
+
+.register-text {
+    color: white;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.register-text a {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+}
